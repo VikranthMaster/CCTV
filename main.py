@@ -1,9 +1,15 @@
 from flask import Flask, render_template
+import os
 #In raspi do this from gpiozero import CPUTemperature()
 #cpu = CPUTemperature()
 #cpu.temperature
 
 app = Flask(__name__)
+
+lst = []
+path = "/media/pi/SANDISK/tmp/GateCamera"
+for x in os.listdir(path):
+	lst.append(x)
 
 @app.route("/")
 def home():
@@ -13,8 +19,8 @@ def home():
 def temperature():
     return render_template('temperature.html')
 
-@app.route("/stairs")
+@app.route("/gate")
 def stairs():
-    return render_template('stairs.html')
+    return render_template('stairs.html',list = lst)
 
 app.run(debug=True)
