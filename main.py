@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 lst = []
-path = "/media/pi/SANDISK/tmp/GateCamera"
+path = "test"
 for x in os.listdir(path):
 	lst.append(x)
 
@@ -21,6 +21,6 @@ def temperature():
 
 @app.route("/gate")
 def stairs():
-    return render_template('stairs.html',list = lst)
+    return render_template('gate.html',list_dir = lst)
 
 app.run(debug=True)

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* table, th, td {
+        border: 1px solid black;
+    } */
+    .content-table
+    {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+    }
+
+    .content-table tr
+    {
+        background-color:#009879;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .content-table th
+    {
+        padding: 12px 15px;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Gate Stats</h1>
+    <table class="content-table" style="width:100%;">
+        <tr>
+            {% for x in list_dir %}
+                <tr>{{ x }}</tr>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>
